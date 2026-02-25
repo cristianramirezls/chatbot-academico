@@ -271,6 +271,17 @@
             audBtn.style.display = "none";
         }
     }
+
+    function ocultarCancelaciones() {
+        const btnImg = document.getElementById("cancelImageBtn");
+        const btnVid = document.getElementById("cancelVideoBtn");
+        const btnAud = document.getElementById("cancelAudioBtn");
+
+        if (btnImg) btnImg.style.display = "none";
+        if (btnVid) btnVid.style.display = "none";
+        if (btnAud) btnAud.style.display = "none";
+    }
+
     function mostrarBotonesDeNavegacion() {
         if (!state.year) return;
     
@@ -310,6 +321,8 @@
             imagenPendiente =null;
             videoPendiente = null;   // ⬅️ NUEVO
             audioPendiente = null; // 🔥 CLAVE
+            ocultarCancelaciones(); // 👈 ESTA ES LA CLAVE
+
             limpiarChat();
         }
 
